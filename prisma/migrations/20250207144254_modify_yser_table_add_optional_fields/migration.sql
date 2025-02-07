@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "users" ALTER COLUMN "document" DROP NOT NULL,
+ALTER COLUMN "blood_type" DROP NOT NULL,
+ALTER COLUMN "role" SET DEFAULT 'NORMAL';

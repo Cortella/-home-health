@@ -1,0 +1,22 @@
+version: "2"
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  home-health:
+    image: "bitnami/postgresql:latest"
+    networks:
+      - app-tier
+    container_name: home-health-postgres
+    restart: always
+
+    environment:
+      POSTGRESQL_USERNAME: cortella
+      POSTGRESQL_PASSWORD: 123456
+      POSTGRESQL_DATABASE: homehealth
+    ports:
+      - "5432:5432"
+    volumes:
+      - /path/to/postgresql-persistence:/bitnami/postgresql
